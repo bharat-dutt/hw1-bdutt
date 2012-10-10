@@ -24,21 +24,24 @@ public class PosTagNamedEntityRecognizer {
     pipeline = new StanfordCoreNLP(props);
   }
 
-  public Map<Integer, Integer> getGeneSpans(String text) {
+  public Map<Integer, Integer> getGeneSpans(String text, String[] TextReturn) {
     Map<Integer, Integer> begin2end = new HashMap<Integer, Integer>();
     Annotation document = new Annotation(text);
     pipeline.annotate(document);
     List<CoreMap> sentences = document.get(SentencesAnnotation.class);
+    int i=0; //bharat
     for (CoreMap sentence : sentences) {
       List<CoreLabel> candidate = new ArrayList<CoreLabel>();
       for (CoreLabel token : sentence.get(TokensAnnotation.class)) {
         String pos = token.get(PartOfSpeechAnnotation.class);
         if (pos.startsWith("NN")) {
           candidate.add(token);
+          
         } else if (candidate.size() > 0) {
           int begin = candidate.get(0).beginPosition();
           int end = candidate.get(candidate.size() - 1).endPosition();
           begin2end.put(begin, end);
+          TextReturn[i++] = pos; //bharat
           candidate.clear();
         }
       }
