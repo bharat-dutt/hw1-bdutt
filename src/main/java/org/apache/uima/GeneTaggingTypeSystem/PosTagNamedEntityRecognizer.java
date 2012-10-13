@@ -1,3 +1,4 @@
+package org.apache.uima.GeneTaggingTypeSystem;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,16 +25,18 @@ public class PosTagNamedEntityRecognizer {
     pipeline = new StanfordCoreNLP(props);
   }
 
-  public Map<Integer, Integer> getGeneSpans(String text, String[] TextReturn) {
+  public Map<Integer, Integer> getGeneSpans(String text, String TextReturn) {
     Map<Integer, Integer> begin2end = new HashMap<Integer, Integer>();
     Annotation document = new Annotation(text);
+    //System.out.println(text + "\n");
     pipeline.annotate(document);
     List<CoreMap> sentences = document.get(SentencesAnnotation.class);
-    int i=0; //bharat
     for (CoreMap sentence : sentences) {
       List<CoreLabel> candidate = new ArrayList<CoreLabel>();
+      //System.out.println("Candidate = " + candidate.toString());
       for (CoreLabel token : sentence.get(TokensAnnotation.class)) {
         String pos = token.get(PartOfSpeechAnnotation.class);
+        //System.out.println("pos= " + pos);
         if (pos.startsWith("NN")) {
           candidate.add(token);
           
@@ -41,7 +44,8 @@ public class PosTagNamedEntityRecognizer {
           int begin = candidate.get(0).beginPosition();
           int end = candidate.get(candidate.size() - 1).endPosition();
           begin2end.put(begin, end);
-          TextReturn[i++] = pos; //bharat
+          //TextReturn = pos; //bharat
+          //System.out.println(TextReturn + " " + pos);
           candidate.clear();
         }
       }
