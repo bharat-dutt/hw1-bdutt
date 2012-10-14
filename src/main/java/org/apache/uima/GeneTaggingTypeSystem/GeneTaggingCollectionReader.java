@@ -36,11 +36,12 @@ public class GeneTaggingCollectionReader extends CollectionReader_ImplBase {
     a = str.split(" ",2);
     SourceText mySource = new SourceText(jcas);
     mySource.setSentenceID(a[0]);
+    //System.out.println("a1 = " + a[1]);
     mySource.setSourceText(a[1]);
-    mySource.addToIndexes();
+    mySource.addToIndexes(jcas);
     }
     
-    jcas.setDocumentText(FileUtils.reader2String(inputFile));
+    jcas.setDocumentText(FileUtils.reader2String(inputFile)); //for book-keeping
     
     hasNext = false;
   }
