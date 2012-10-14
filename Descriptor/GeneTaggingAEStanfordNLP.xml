@@ -23,7 +23,7 @@
           <type allAnnotatorFeatures="true">org.apache.uima.GeneTaggingTypeSystem.SourceText</type>
         </inputs>
         <outputs>
-          <type allAnnotatorFeatures="true">org.apache.uima.GeneTaggingTypeSystem.IntermediateAnnotations</type>
+          <type allAnnotatorFeatures="true">org.apache.uima.GeneTaggingTypeSystem.Gene</type>
         </outputs>
         <languagesSupported/>
       </capability>

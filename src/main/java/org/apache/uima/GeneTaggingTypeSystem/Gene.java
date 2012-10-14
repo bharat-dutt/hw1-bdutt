@@ -11,8 +11,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Sat Oct 13 19:28:07 EDT 2012
- * XML source: C:/eclipse/Workspace/hw1-bdutt/Descriptor/GeneTaggingSystemBioAE.xml
+ * Updated by JCasGen Sat Oct 13 20:40:51 EDT 2012
+ * XML source: C:/eclipse/Workspace/hw1-bdutt/Descriptor/GeneTaggingCasConsumer.xml
  * @generated */
 public class Gene extends Annotation {
   /** @generated

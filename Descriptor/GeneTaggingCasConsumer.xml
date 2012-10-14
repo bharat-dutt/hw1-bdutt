@@ -19,7 +19,7 @@
     <capabilities>
       <capability>
         <inputs>
-          <type allAnnotatorFeatures="true">org.apache.uima.GeneTaggingTypeSystem.IntermediateAnnotations</type>
+          <type allAnnotatorFeatures="true">org.apache.uima.GeneTaggingTypeSystem.Gene</type>
         </inputs>
         <outputs/>
         <languagesSupported/>

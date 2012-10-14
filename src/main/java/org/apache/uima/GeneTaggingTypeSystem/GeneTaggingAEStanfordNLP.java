@@ -31,7 +31,7 @@ public class GeneTaggingAEStanfordNLP extends JCasAnnotator_ImplBase {
       // Reading the map to get the annotations per sentence
       Set<Map.Entry<Integer, Integer>> entries = InterMap.entrySet();
       for(Map.Entry<Integer, Integer> entry : entries) {
-        IntermediateAnnotations InterAnnot = new IntermediateAnnotations(aJCas);  
+        Gene InterAnnot = new Gene(aJCas);  
         //using Abner database to annotate the gene names
         String interEntity = source.getSourceText().substring(entry.getKey(),entry.getValue());
         

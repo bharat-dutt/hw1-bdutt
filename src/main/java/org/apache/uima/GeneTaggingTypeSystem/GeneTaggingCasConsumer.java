@@ -23,11 +23,11 @@ public class GeneTaggingCasConsumer extends CasConsumer_ImplBase {
     try
     {
     BufferedWriter outputFile = new BufferedWriter(new FileWriter("C:\\Users\\BharatDutt\\Desktop\\sample1.out"));
-    FSIterator iter = jcas.getAnnotationIndex(IntermediateAnnotations.type).iterator();
+    FSIterator iter = jcas.getAnnotationIndex(Gene.type).iterator();
     while(iter.hasNext())
     {
-      IntermediateAnnotations interAnnotate = (IntermediateAnnotations)iter.next();
-      outputFile.write(interAnnotate.getID() +"|"+ interAnnotate.getStartSpan() +" "+interAnnotate.getEndSpan()+"|"+ interAnnotate.getName() + "\n");
+      Gene FinalAnnotate = (Gene)iter.next();
+      outputFile.write(FinalAnnotate.getID() +"|"+ FinalAnnotate.getStartSpan() +" "+FinalAnnotate.getEndSpan()+"|"+ FinalAnnotate.getName() + "\n");
     }
     }
     catch(IOException ioE)
