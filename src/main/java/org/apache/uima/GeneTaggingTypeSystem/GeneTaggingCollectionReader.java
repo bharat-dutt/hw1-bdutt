@@ -31,7 +31,10 @@ public class GeneTaggingCollectionReader extends CollectionReader_ImplBase {
       throw new CollectionException(e);
     }
 
-    BufferedReader inputFile = new BufferedReader(new FileReader(".\\src\\main\\resources\\data\\sample.in"));
+    //Getting the Configuration Parameter
+    
+    String ImputFilePath = (String) getConfigParameterValue("InputFile");
+    BufferedReader inputFile = new BufferedReader(new FileReader(ImputFilePath));
     
     //Breaking each sentence into ID and text
     String a[] = null;
