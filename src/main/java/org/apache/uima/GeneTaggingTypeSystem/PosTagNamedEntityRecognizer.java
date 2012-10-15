@@ -18,13 +18,21 @@ import edu.stanford.nlp.util.CoreMap;
 public class PosTagNamedEntityRecognizer {
 
   private StanfordCoreNLP pipeline;
-
+/**
+ * Contructor
+ * @throws ResourceInitializationException
+ */
   public PosTagNamedEntityRecognizer() throws ResourceInitializationException {
     Properties props = new Properties();
     props.put("annotators", "tokenize, ssplit, pos");
     pipeline = new StanfordCoreNLP(props);
   }
-
+/**
+ * This method accepts string as input and annotates the Part-of-speech tokens 
+ * and returns the spans
+ * @param text
+ * @return
+ */
   public Map<Integer, Integer> getGeneSpans(String text) {
     Map<Integer, Integer> begin2end = new HashMap<Integer, Integer>();
     Annotation document = new Annotation(text);

@@ -15,6 +15,11 @@ public class GeneTaggingCollectionReader extends CollectionReader_ImplBase {
 
   Boolean hasNext = true;
   
+  /**
+   * Called when the AE wants to get the next Annotations to work on.
+   * In our case its only called once and reads the whole file at once
+   * @param aCas
+   */
   @Override
   public void getNext(CAS aCAS) throws IOException, CollectionException {
     // TODO Auto-generated method stub
@@ -33,10 +38,11 @@ public class GeneTaggingCollectionReader extends CollectionReader_ImplBase {
     String str;
     while((str = inputFile.readLine()) != null)
     {
+      
+    //Splitting the string into Sentence ID and Sentence to be annotated
     a = str.split(" ",2);
     SourceText mySource = new SourceText(jcas);
     mySource.setSentenceID(a[0]);
-    //System.out.println("a1 = " + a[1]);
     mySource.setSourceText(a[1]);
     mySource.addToIndexes(jcas);
     }
@@ -46,6 +52,10 @@ public class GeneTaggingCollectionReader extends CollectionReader_ImplBase {
     hasNext = false;
   }
 
+  /**
+   * Return True/False based on whether there are any more lines to be read
+   * @return boolean
+   */
   @Override
   public boolean hasNext() throws IOException, CollectionException {
     // TODO Auto-generated method stub

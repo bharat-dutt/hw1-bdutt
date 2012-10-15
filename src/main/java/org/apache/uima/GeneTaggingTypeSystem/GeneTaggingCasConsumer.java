@@ -1,15 +1,25 @@
 package org.apache.uima.GeneTaggingTypeSystem;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.collection.CasConsumer_ImplBase;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceProcessException;
-import java.io.*;
 
 public class GeneTaggingCasConsumer extends CasConsumer_ImplBase {
 
+  /**
+   * This method is overriden version of the processCas method in CasConsumer_ImplBase
+   * It accepts the gene annotations and writes it to the output file
+   * @param aCas
+   */
   @Override
   public void processCas(CAS aCAS) throws ResourceProcessException {
     // TODO Auto-generated method stub
@@ -22,7 +32,10 @@ public class GeneTaggingCasConsumer extends CasConsumer_ImplBase {
 
     try
     {
-    BufferedWriter outputFile = new BufferedWriter(new FileWriter("C:\\Users\\BharatDutt\\Desktop\\sample1.out"));
+    //ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+    //URL myURL = classloader.getResource("src/main/resources/output/sample1.out");
+    //BufferedWriter outputFile = new BufferedWriter(new FileWriter(myURL.toURI().toString()));
+    BufferedWriter outputFile = new BufferedWriter(new FileWriter("C:\\Users\\BharatDutt\\Desktop\\sample2.out"));  
     FSIterator iter = jcas.getAnnotationIndex(Gene.type).iterator();
     while(iter.hasNext())
     {
@@ -34,6 +47,7 @@ public class GeneTaggingCasConsumer extends CasConsumer_ImplBase {
     {
       ioE.printStackTrace();
     }
-  }
+    
+   }
 
 }

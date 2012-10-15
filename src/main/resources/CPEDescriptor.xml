@@ -10,7 +10,7 @@
     <casProcessors casPoolSize="3" processingUnitThreadCount="1">
         <casProcessor deployment="integrated" name="GeneTaggingAEStanfordNLP">
             <descriptor>
-                <import location="../../../Descriptor/GeneTaggingAEStanfordNLP.xml"/>
+                <import location="../../../Descriptor/GeneTaggingAbnerNER.xml"/>
             </descriptor>
             <deploymentParameters/>
             <errorHandling>
