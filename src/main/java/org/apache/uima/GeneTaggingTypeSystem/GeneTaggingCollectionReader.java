@@ -31,7 +31,7 @@ public class GeneTaggingCollectionReader extends CollectionReader_ImplBase {
       throw new CollectionException(e);
     }
 
-    BufferedReader inputFile = new BufferedReader(new FileReader("C:\\Users\\BharatDutt\\Desktop\\sample.in"));
+    BufferedReader inputFile = new BufferedReader(new FileReader(".\\src\\main\\resources\\data\\sample.in"));
     
     //Breaking each sentence into ID and text
     String a[] = null;

@@ -1,5 +1,6 @@
 package org.apache.uima.GeneTaggingTypeSystem;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -21,112 +22,57 @@ public class GeneTaggingAbnerNER extends JCasAnnotator_ImplBase {
   @Override
   public void process(JCas aJCas) throws AnalysisEngineProcessException {
     // TODO Auto-generated method stub
+    
+    try {
+    
     FSIndex  SourceDocindex = aJCas.getAnnotationIndex(SourceText.type);
     Iterator sourceIter = SourceDocindex.iterator();
-    Tagger BioCreativeTagger = new Tagger(); // Using Abner 
+    Tagger BioCreativeTagger = new Tagger(Tagger.BIOCREATIVE); // Using Abner   
     
-    //PosTagNamedEntityRecognizer ner = new PosTagNamedEntityRecognizer();
-    while(sourceIter.hasNext())
-    {
-      SourceText source = (SourceText)sourceIter.next();
+      PosTagNamedEntityRecognizer ner = new PosTagNamedEntityRecognizer();     
       
-        Gene InterAnnot = new Gene(aJCas);  
-        String[] AbnerTestProtein = BioCreativeTagger.getEntities(source.getSourceText(), "PROTEIN");
-        String[] AbnerTestDNA = BioCreativeTagger.getEntities(source.getSourceText(), "DNA");
-        String[] AbnerTestRNA = BioCreativeTagger.getEntities(source.getSourceText(), "RNA");
-        String[] AbnerTestCellType = BioCreativeTagger.getEntities(source.getSourceText(), "CELL-TYPE");
-        String[] AbnerTestCellLine = BioCreativeTagger.getEntities(source.getSourceText(), "CELL-LINE");
-        String sourceRWS = source.getSourceText();
-     
-      
-       //Getting gene spans
-        if(AbnerTestProtein.length != 0)
-        {
-          for(int i = 0; i<AbnerTestProtein.length;i++)
-          {     
-           //System.out.println("gotProtein\n");
-           InterAnnot.setID(source.getSentenceID());
-           InterAnnot.setName(AbnerTestProtein[i]);
-          //Trim both strings
-          sourceRWS = sourceRWS.replaceAll(" ", "");
-          AbnerTestProtein[i]=AbnerTestProtein[i].replaceAll(" ", "");
-          int StartSpan = sourceRWS.indexOf(AbnerTestProtein[i]);
-          //int StartSpan = source.getSourceText().indexOf(AbnerTestProtein[i]);
-          InterAnnot.setStartSpan(StartSpan);
-          InterAnnot.setEndSpan(StartSpan+AbnerTestProtein[i].length()-1);
-          InterAnnot.addToIndexes(aJCas);
-          }
-        }
+      while(sourceIter.hasNext())
+      {
         
-        if(AbnerTestRNA.length != 0)
-        {
-          for(int i = 0; i<AbnerTestRNA.length;i++)
+          SourceText source = (SourceText)sourceIter.next();
+          // running this through the Stanford CoreNLP
+          
+          Map<Integer, Integer> StanfordHashMap = new HashMap<Integer, Integer>();
+          
+          StanfordHashMap = ner.getGeneSpans(source.getSourceText());
+          
+          for (Map.Entry<Integer, Integer> entry : StanfordHashMap.entrySet()) 
           {
-            System.out.println("gotRNA\n");
-           InterAnnot.setID(source.getSentenceID());
-           InterAnnot.setName(AbnerTestRNA[i]);
-          //Trim both strings
-           sourceRWS = sourceRWS.replaceAll(" ", "");
-          AbnerTestRNA[i]=AbnerTestRNA[i].trim().replaceAll(" ", "");
-          int StartSpan = sourceRWS.indexOf(AbnerTestRNA[i]);
+          Integer key = entry.getKey();
+          Integer value = entry.getValue();
+          
+          String possibleGeneEntity = source.getSourceText().substring(key, value);
+          String result = BioCreativeTagger.tagSGML(possibleGeneEntity);
+          
+          if(result.contains("PROTEIN") || result.contains("DNA") || result.contains("RNA") || result.contains("CELL-LINE") || result.contains("CELL-TYPE"))
+          {
+          String StrWsRemove = source.getSourceText().replaceAll(" ","");
+          Gene InterAnnot = new Gene(aJCas); 
+          InterAnnot.setID(source.getSentenceID());
+          InterAnnot.setName(possibleGeneEntity);
+          String geneEntity = possibleGeneEntity.replaceAll(" ", "");
+          int StartSpan = StrWsRemove.indexOf(geneEntity);
           InterAnnot.setStartSpan(StartSpan);
-          InterAnnot.setEndSpan(StartSpan+AbnerTestRNA[i].length()-1);
-          InterAnnot.addToIndexes(aJCas);
+          InterAnnot.setEndSpan(StartSpan + geneEntity.length() -1);
+          InterAnnot.addToIndexes();
           }
-        }
-        
-        if(AbnerTestDNA.length != 0)
-        {
-          for(int i = 0; i<AbnerTestDNA.length;i++)
-          {           
-            //System.out.println("gotDNA\n");
-           InterAnnot.setID(source.getSentenceID());
-           InterAnnot.setName(AbnerTestDNA[i]);
-          //Trim both strings
-           sourceRWS = sourceRWS.replaceAll(" ", "");
-          AbnerTestDNA[i]=AbnerTestDNA[i].replaceAll(" ", "");
-          int StartSpan = sourceRWS.indexOf(AbnerTestDNA[i]);
-          InterAnnot.setStartSpan(StartSpan);
-          InterAnnot.setEndSpan(StartSpan+AbnerTestDNA[i].length()-1);
-          InterAnnot.addToIndexes(aJCas);
           }
-        }
-        
-        if(AbnerTestCellLine.length != 0)
-        {
-          for(int i = 0; i<AbnerTestCellLine.length;i++)
-          {           
-            //System.out.println("gotCellLine\n");
-           InterAnnot.setID(source.getSentenceID());
-           InterAnnot.setName(AbnerTestCellLine[i]);
-          //Trim both strings
-           sourceRWS = sourceRWS.replaceAll(" ", "");
-          AbnerTestCellLine[i]=AbnerTestCellLine[i].replaceAll(" ", "");
-          int StartSpan = sourceRWS.indexOf(AbnerTestCellLine[i]);
-          InterAnnot.setStartSpan(StartSpan);
-          InterAnnot.setEndSpan(StartSpan+AbnerTestCellLine[i].length()-1);
-          InterAnnot.addToIndexes(aJCas);
-          }
-        }
-        
-        if(AbnerTestCellType.length != 0)
-        {
-          for(int i = 0; i<AbnerTestCellType.length;i++)
-          {           
-            //System.out.println("gotCellType\n");
-           InterAnnot.setID(source.getSentenceID());
-           InterAnnot.setName(AbnerTestCellType[i]);
-          //Trim both strings
-           sourceRWS = sourceRWS.replaceAll(" ", "");
-          AbnerTestCellType[i]=AbnerTestCellType[i].replaceAll(" ", "");
-          int StartSpan = sourceRWS.indexOf(AbnerTestCellType[i]);
-          InterAnnot.setStartSpan(StartSpan);
-          InterAnnot.setEndSpan(StartSpan+AbnerTestCellType[i].length()-1);
-          InterAnnot.addToIndexes(aJCas);
-          }
-        }
-               
+      }
+          
+    
+    
     }
+    
+    catch (ResourceInitializationException e) {
+      
+      e.printStackTrace();
+    }
+   
     
     
   }

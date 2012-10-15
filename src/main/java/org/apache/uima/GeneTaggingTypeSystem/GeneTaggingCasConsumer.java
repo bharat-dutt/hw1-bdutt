@@ -35,7 +35,7 @@ public class GeneTaggingCasConsumer extends CasConsumer_ImplBase {
     //ClassLoader classloader = Thread.currentThread().getContextClassLoader();
     //URL myURL = classloader.getResource("src/main/resources/output/sample1.out");
     //BufferedWriter outputFile = new BufferedWriter(new FileWriter(myURL.toURI().toString()));
-    BufferedWriter outputFile = new BufferedWriter(new FileWriter("C:\\Users\\BharatDutt\\Desktop\\sample2.out"));  
+    BufferedWriter outputFile = new BufferedWriter(new FileWriter(".\\src\\main\\resources\\output\\sample2.out"));  
     FSIterator iter = jcas.getAnnotationIndex(Gene.type).iterator();
     while(iter.hasNext())
     {
