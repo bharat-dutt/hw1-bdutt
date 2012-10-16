@@ -30,7 +30,7 @@ public class PosTagNamedEntityRecognizer {
 /**
  * This method accepts string as input and annotates the Part-of-speech tokens 
  * and returns the spans
- * @param text
+ * @param text the string which will be annotated
  * @return
  */
   public Map<Integer, Integer> getGeneSpans(String text) {

@@ -16,7 +16,7 @@ public class GeneTaggingAbnerNER extends JCasAnnotator_ImplBase {
 
   /**
    * Gets the SourceText type annotations and converts them into Gene type annotations
-   * @param aJCas
+   * @param aJCas This is the Global Jcas context
    */
   @Override
   public void process(JCas aJCas) throws AnalysisEngineProcessException {

@@ -18,7 +18,7 @@ public class GeneTaggingCollectionReader extends CollectionReader_ImplBase {
   /**
    * Called when the AE wants to get the next Annotations to work on.
    * In our case its only called once and reads the whole file at once
-   * @param aCas
+   * @param aCas the global CAS context
    */
   @Override
   public void getNext(CAS aCAS) throws IOException, CollectionException {
@@ -57,7 +57,7 @@ public class GeneTaggingCollectionReader extends CollectionReader_ImplBase {
 
   /**
    * Return True/False based on whether there are any more lines to be read
-   * @return boolean
+   * @return boolean if true then the AE will call getNext()
    */
   @Override
   public boolean hasNext() throws IOException, CollectionException {

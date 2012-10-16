@@ -18,7 +18,7 @@ public class GeneTaggingCasConsumer extends CasConsumer_ImplBase {
   /**
    * This method is overriden version of the processCas method in CasConsumer_ImplBase
    * It accepts the gene annotations and writes it to the output file
-   * @param aCas
+   * @param aCas the global CAS context
    */
   @Override
   public void processCas(CAS aCAS) throws ResourceProcessException {
