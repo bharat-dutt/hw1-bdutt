@@ -3,7 +3,6 @@ package org.apache.uima.GeneTaggingTypeSystem;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
@@ -29,7 +28,8 @@ public class GeneTaggingAbnerNER extends JCasAnnotator_ImplBase {
     Iterator sourceIter = SourceDocindex.iterator();
     Tagger BioCreativeTagger = new Tagger(Tagger.BIOCREATIVE); // Using Abner   
     
-      PosTagNamedEntityRecognizer ner = new PosTagNamedEntityRecognizer();     
+      //PosTagNamedEntityRecognizer ner = new PosTagNamedEntityRecognizer();
+    PosTagNamedEntityRecognizer ner = new PosTagNamedEntityRecognizer();
       
       while(sourceIter.hasNext())
       {

@@ -4,7 +4,7 @@
   <primitive>true</primitive>
   <annotatorImplementationName>org.apache.uima.GeneTaggingTypeSystem.GeneTaggingAbnerNER</annotatorImplementationName>
   <analysisEngineMetaData>
-    <name>GeneTaggingAEStanfordNLP</name>
+    <name>GeneTaggingAbnerNER</name>
     <description/>
     <version>1.0</version>
     <vendor/>
