@@ -111,7 +111,7 @@
     </dependency>
   </dependencies>
   <scm>
-  	<connection>scm:git:git@github.com:bharat-dutt/hw0-bdutt.git</connection>
-  	<developerConnection>scm:git:git@github.com:bharat-dutt/hw0-bdutt.git</developerConnection>
+  	<connection>scm:git:git@github.com:bharat-dutt/hw1-bdutt.git</connection>
+  	<developerConnection>scm:git:git@github.com:bharat-dutt/hw1-bdutt.git</developerConnection>
   </scm>
 </project>
