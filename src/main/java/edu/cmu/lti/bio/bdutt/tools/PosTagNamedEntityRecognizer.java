@@ -1,4 +1,4 @@
-package edu.cmu.lti.bio.bdutt.utilities;
+package edu.cmu.lti.bio.bdutt.tools;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

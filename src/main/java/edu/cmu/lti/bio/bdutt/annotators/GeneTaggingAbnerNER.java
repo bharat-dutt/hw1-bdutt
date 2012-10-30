@@ -10,9 +10,9 @@ import org.apache.uima.cas.FSIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
+import edu.cmu.lti.bio.bdutt.tools.PosTagNamedEntityRecognizer;
 import edu.cmu.lti.bio.bdutt.types.Gene;
 import edu.cmu.lti.bio.bdutt.types.SourceText;
-import edu.cmu.lti.bio.bdutt.utilities.PosTagNamedEntityRecognizer;
 
 import abner.Tagger;
 
