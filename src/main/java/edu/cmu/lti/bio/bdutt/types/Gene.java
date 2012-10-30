@@ -1,7 +1,7 @@
 
 
 /* First created by JCasGen Wed Oct 10 18:31:27 EDT 2012 */
-package org.apache.uima.GeneTaggingTypeSystem;
+package edu.cmu.lti.bio.bdutt.types;
 
 import org.apache.uima.jcas.JCas; 
 import org.apache.uima.jcas.JCasRegistry;
@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Tue Oct 16 12:52:26 EDT 2012
+ * Updated by JCasGen Mon Oct 29 18:44:12 EDT 2012
  * XML source: C:/eclipse/Workspace/hw1-bdutt/src/main/resources/GeneTaggingCollectionReader.xml
  * @generated */
 public class Gene extends Annotation {
@@ -69,14 +69,14 @@ public class Gene extends Annotation {
    * @generated */
   public String getID() {
     if (Gene_Type.featOkTst && ((Gene_Type)jcasType).casFeat_ID == null)
-      jcasType.jcas.throwFeatMissing("ID", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcasType.jcas.throwFeatMissing("ID", "edu.cmu.lti.bio.bdutt.types.Gene");
     return jcasType.ll_cas.ll_getStringValue(addr, ((Gene_Type)jcasType).casFeatCode_ID);}
     
   /** setter for ID - sets This will be the ID of the sentence where we have annotated what we think is a Gene name 
    * @generated */
   public void setID(String v) {
     if (Gene_Type.featOkTst && ((Gene_Type)jcasType).casFeat_ID == null)
-      jcasType.jcas.throwFeatMissing("ID", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcasType.jcas.throwFeatMissing("ID", "edu.cmu.lti.bio.bdutt.types.Gene");
     jcasType.ll_cas.ll_setStringValue(addr, ((Gene_Type)jcasType).casFeatCode_ID, v);}    
    
     
@@ -87,14 +87,14 @@ public class Gene extends Annotation {
    * @generated */
   public String getName() {
     if (Gene_Type.featOkTst && ((Gene_Type)jcasType).casFeat_Name == null)
-      jcasType.jcas.throwFeatMissing("Name", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcasType.jcas.throwFeatMissing("Name", "edu.cmu.lti.bio.bdutt.types.Gene");
     return jcasType.ll_cas.ll_getStringValue(addr, ((Gene_Type)jcasType).casFeatCode_Name);}
     
   /** setter for Name - sets This is the name of the Gene 
    * @generated */
   public void setName(String v) {
     if (Gene_Type.featOkTst && ((Gene_Type)jcasType).casFeat_Name == null)
-      jcasType.jcas.throwFeatMissing("Name", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcasType.jcas.throwFeatMissing("Name", "edu.cmu.lti.bio.bdutt.types.Gene");
     jcasType.ll_cas.ll_setStringValue(addr, ((Gene_Type)jcasType).casFeatCode_Name, v);}    
    
     
@@ -105,14 +105,14 @@ public class Gene extends Annotation {
    * @generated */
   public int getStartSpan() {
     if (Gene_Type.featOkTst && ((Gene_Type)jcasType).casFeat_StartSpan == null)
-      jcasType.jcas.throwFeatMissing("StartSpan", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcasType.jcas.throwFeatMissing("StartSpan", "edu.cmu.lti.bio.bdutt.types.Gene");
     return jcasType.ll_cas.ll_getIntValue(addr, ((Gene_Type)jcasType).casFeatCode_StartSpan);}
     
   /** setter for StartSpan - sets Starting span value of the Gene name. 
    * @generated */
   public void setStartSpan(int v) {
     if (Gene_Type.featOkTst && ((Gene_Type)jcasType).casFeat_StartSpan == null)
-      jcasType.jcas.throwFeatMissing("StartSpan", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcasType.jcas.throwFeatMissing("StartSpan", "edu.cmu.lti.bio.bdutt.types.Gene");
     jcasType.ll_cas.ll_setIntValue(addr, ((Gene_Type)jcasType).casFeatCode_StartSpan, v);}    
    
     
@@ -123,14 +123,14 @@ public class Gene extends Annotation {
    * @generated */
   public int getEndSpan() {
     if (Gene_Type.featOkTst && ((Gene_Type)jcasType).casFeat_EndSpan == null)
-      jcasType.jcas.throwFeatMissing("EndSpan", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcasType.jcas.throwFeatMissing("EndSpan", "edu.cmu.lti.bio.bdutt.types.Gene");
     return jcasType.ll_cas.ll_getIntValue(addr, ((Gene_Type)jcasType).casFeatCode_EndSpan);}
     
   /** setter for EndSpan - sets Ending span value of the gene name 
    * @generated */
   public void setEndSpan(int v) {
     if (Gene_Type.featOkTst && ((Gene_Type)jcasType).casFeat_EndSpan == null)
-      jcasType.jcas.throwFeatMissing("EndSpan", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcasType.jcas.throwFeatMissing("EndSpan", "edu.cmu.lti.bio.bdutt.types.Gene");
     jcasType.ll_cas.ll_setIntValue(addr, ((Gene_Type)jcasType).casFeatCode_EndSpan, v);}    
   }
 

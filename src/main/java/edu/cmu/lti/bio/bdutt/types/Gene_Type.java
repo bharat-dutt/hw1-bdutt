@@ -1,6 +1,6 @@
 
 /* First created by JCasGen Wed Oct 10 18:31:27 EDT 2012 */
-package org.apache.uima.GeneTaggingTypeSystem;
+package edu.cmu.lti.bio.bdutt.types;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Tue Oct 16 12:52:26 EDT 2012
+ * Updated by JCasGen Mon Oct 29 18:44:12 EDT 2012
  * @generated */
 public class Gene_Type extends Annotation_Type {
   /** @generated */
@@ -42,7 +42,7 @@ public class Gene_Type extends Annotation_Type {
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.apache.uima.GeneTaggingTypeSystem.Gene");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("edu.cmu.lti.bio.bdutt.types.Gene");
  
   /** @generated */
   final Feature casFeat_ID;
@@ -51,13 +51,13 @@ public class Gene_Type extends Annotation_Type {
   /** @generated */ 
   public String getID(int addr) {
         if (featOkTst && casFeat_ID == null)
-      jcas.throwFeatMissing("ID", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcas.throwFeatMissing("ID", "edu.cmu.lti.bio.bdutt.types.Gene");
     return ll_cas.ll_getStringValue(addr, casFeatCode_ID);
   }
   /** @generated */    
   public void setID(int addr, String v) {
         if (featOkTst && casFeat_ID == null)
-      jcas.throwFeatMissing("ID", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcas.throwFeatMissing("ID", "edu.cmu.lti.bio.bdutt.types.Gene");
     ll_cas.ll_setStringValue(addr, casFeatCode_ID, v);}
     
   
@@ -69,13 +69,13 @@ public class Gene_Type extends Annotation_Type {
   /** @generated */ 
   public String getName(int addr) {
         if (featOkTst && casFeat_Name == null)
-      jcas.throwFeatMissing("Name", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcas.throwFeatMissing("Name", "edu.cmu.lti.bio.bdutt.types.Gene");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Name);
   }
   /** @generated */    
   public void setName(int addr, String v) {
         if (featOkTst && casFeat_Name == null)
-      jcas.throwFeatMissing("Name", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcas.throwFeatMissing("Name", "edu.cmu.lti.bio.bdutt.types.Gene");
     ll_cas.ll_setStringValue(addr, casFeatCode_Name, v);}
     
   
@@ -87,13 +87,13 @@ public class Gene_Type extends Annotation_Type {
   /** @generated */ 
   public int getStartSpan(int addr) {
         if (featOkTst && casFeat_StartSpan == null)
-      jcas.throwFeatMissing("StartSpan", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcas.throwFeatMissing("StartSpan", "edu.cmu.lti.bio.bdutt.types.Gene");
     return ll_cas.ll_getIntValue(addr, casFeatCode_StartSpan);
   }
   /** @generated */    
   public void setStartSpan(int addr, int v) {
         if (featOkTst && casFeat_StartSpan == null)
-      jcas.throwFeatMissing("StartSpan", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcas.throwFeatMissing("StartSpan", "edu.cmu.lti.bio.bdutt.types.Gene");
     ll_cas.ll_setIntValue(addr, casFeatCode_StartSpan, v);}
     
   
@@ -105,13 +105,13 @@ public class Gene_Type extends Annotation_Type {
   /** @generated */ 
   public int getEndSpan(int addr) {
         if (featOkTst && casFeat_EndSpan == null)
-      jcas.throwFeatMissing("EndSpan", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcas.throwFeatMissing("EndSpan", "edu.cmu.lti.bio.bdutt.types.Gene");
     return ll_cas.ll_getIntValue(addr, casFeatCode_EndSpan);
   }
   /** @generated */    
   public void setEndSpan(int addr, int v) {
         if (featOkTst && casFeat_EndSpan == null)
-      jcas.throwFeatMissing("EndSpan", "org.apache.uima.GeneTaggingTypeSystem.Gene");
+      jcas.throwFeatMissing("EndSpan", "edu.cmu.lti.bio.bdutt.types.Gene");
     ll_cas.ll_setIntValue(addr, casFeatCode_EndSpan, v);}
     
   

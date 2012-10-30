@@ -1,4 +1,4 @@
-package org.apache.uima.GeneTaggingTypeSystem;
+package edu.cmu.lti.bio.bdutt.utilities;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

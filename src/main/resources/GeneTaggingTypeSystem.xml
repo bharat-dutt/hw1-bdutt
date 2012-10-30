@@ -6,7 +6,7 @@
   <vendor/>
   <types>
     <typeDescription>
-      <name>org.apache.uima.GeneTaggingTypeSystem.Gene</name>
+      <name>edu.cmu.lti.bio.bdutt.types.Gene</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>
@@ -33,7 +33,7 @@
       </features>
     </typeDescription>
     <typeDescription>
-      <name>org.apache.uima.GeneTaggingTypeSystem.SourceText</name>
+      <name>edu.cmu.lti.bio.bdutt.types.SourceText</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>

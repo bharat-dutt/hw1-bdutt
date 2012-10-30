@@ -1,6 +1,6 @@
 
 /* First created by JCasGen Wed Oct 10 18:59:04 EDT 2012 */
-package org.apache.uima.GeneTaggingTypeSystem;
+package edu.cmu.lti.bio.bdutt.types;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Tue Oct 16 12:52:26 EDT 2012
+ * Updated by JCasGen Mon Oct 29 18:44:12 EDT 2012
  * @generated */
 public class SourceText_Type extends Annotation_Type {
   /** @generated */
@@ -42,7 +42,7 @@ public class SourceText_Type extends Annotation_Type {
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.apache.uima.GeneTaggingTypeSystem.SourceText");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("edu.cmu.lti.bio.bdutt.types.SourceText");
  
   /** @generated */
   final Feature casFeat_SentenceID;
@@ -51,13 +51,13 @@ public class SourceText_Type extends Annotation_Type {
   /** @generated */ 
   public String getSentenceID(int addr) {
         if (featOkTst && casFeat_SentenceID == null)
-      jcas.throwFeatMissing("SentenceID", "org.apache.uima.GeneTaggingTypeSystem.SourceText");
+      jcas.throwFeatMissing("SentenceID", "edu.cmu.lti.bio.bdutt.types.SourceText");
     return ll_cas.ll_getStringValue(addr, casFeatCode_SentenceID);
   }
   /** @generated */    
   public void setSentenceID(int addr, String v) {
         if (featOkTst && casFeat_SentenceID == null)
-      jcas.throwFeatMissing("SentenceID", "org.apache.uima.GeneTaggingTypeSystem.SourceText");
+      jcas.throwFeatMissing("SentenceID", "edu.cmu.lti.bio.bdutt.types.SourceText");
     ll_cas.ll_setStringValue(addr, casFeatCode_SentenceID, v);}
     
   
@@ -69,13 +69,13 @@ public class SourceText_Type extends Annotation_Type {
   /** @generated */ 
   public String getSourceText(int addr) {
         if (featOkTst && casFeat_SourceText == null)
-      jcas.throwFeatMissing("SourceText", "org.apache.uima.GeneTaggingTypeSystem.SourceText");
+      jcas.throwFeatMissing("SourceText", "edu.cmu.lti.bio.bdutt.types.SourceText");
     return ll_cas.ll_getStringValue(addr, casFeatCode_SourceText);
   }
   /** @generated */    
   public void setSourceText(int addr, String v) {
         if (featOkTst && casFeat_SourceText == null)
-      jcas.throwFeatMissing("SourceText", "org.apache.uima.GeneTaggingTypeSystem.SourceText");
+      jcas.throwFeatMissing("SourceText", "edu.cmu.lti.bio.bdutt.types.SourceText");
     ll_cas.ll_setStringValue(addr, casFeatCode_SourceText, v);}
     
   

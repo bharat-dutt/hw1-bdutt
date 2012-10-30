@@ -1,4 +1,4 @@
-package org.apache.uima.GeneTaggingTypeSystem;
+package edu.cmu.lti.bio.bdutt.annotators;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -9,6 +9,10 @@ import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
+
+import edu.cmu.lti.bio.bdutt.types.Gene;
+import edu.cmu.lti.bio.bdutt.types.SourceText;
+import edu.cmu.lti.bio.bdutt.utilities.PosTagNamedEntityRecognizer;
 
 import abner.Tagger;
 

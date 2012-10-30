@@ -1,4 +1,4 @@
-package org.apache.uima.GeneTaggingTypeSystem;
+package edu.cmu.lti.bio.bdutt.casconsumers;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -12,6 +12,8 @@ import org.apache.uima.cas.FSIterator;
 import org.apache.uima.collection.CasConsumer_ImplBase;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceProcessException;
+
+import edu.cmu.lti.bio.bdutt.types.Gene;
 
 public class GeneTaggingCasConsumer extends CasConsumer_ImplBase {
 

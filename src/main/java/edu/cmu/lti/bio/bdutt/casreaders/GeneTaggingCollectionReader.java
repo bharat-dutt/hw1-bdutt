@@ -1,4 +1,4 @@
-package org.apache.uima.GeneTaggingTypeSystem;
+package edu.cmu.lti.bio.bdutt.casreaders;
 
 import java.io.*;
 
@@ -10,6 +10,8 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.FileUtils;
 import org.apache.uima.util.Progress;
+
+import edu.cmu.lti.bio.bdutt.types.SourceText;
 
 public class GeneTaggingCollectionReader extends CollectionReader_ImplBase {
 
