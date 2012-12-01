@@ -19,7 +19,7 @@
       <nameValuePair>
         <name>OutputFile</name>
         <value>
-          <string>src/main/resources/output/sample3.out</string>
+          <string>hw1-bdutt.out</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
