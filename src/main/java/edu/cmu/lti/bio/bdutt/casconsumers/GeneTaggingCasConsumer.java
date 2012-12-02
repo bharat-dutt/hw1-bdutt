@@ -42,6 +42,8 @@ public class GeneTaggingCasConsumer extends CasConsumer_ImplBase {
       Gene FinalAnnotate = (Gene)iter.next();
       outputFile.write(FinalAnnotate.getID() +"|"+ FinalAnnotate.getStartSpan() +" "+FinalAnnotate.getEndSpan()+"|"+ FinalAnnotate.getName() + "\n");
     }
+    
+    outputFile.close();
     }
     catch(IOException ioE)
     {
@@ -49,5 +51,6 @@ public class GeneTaggingCasConsumer extends CasConsumer_ImplBase {
     }
     
    }
+  
 
 }

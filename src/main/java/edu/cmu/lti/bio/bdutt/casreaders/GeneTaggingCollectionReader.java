@@ -54,6 +54,7 @@ public class GeneTaggingCollectionReader extends CollectionReader_ImplBase {
     
     jcas.setDocumentText(FileUtils.reader2String(inputFile)); //for book-keeping
     
+    inputFile.close();
     hasNext = false;
   }
 
